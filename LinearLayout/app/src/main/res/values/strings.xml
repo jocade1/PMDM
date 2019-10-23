@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LinearLayout</string>
+    <string name="layaout_lineal">Layaout Lineal</string>
+    <string name="layout_en_tabla">Layout en tabla</string>
+    <string name="layout_relativo">Layout Relativo</string>
+    <string name="layout_en_grid">Layout en grid</string>
+    <string name="layout_lineal">Layout lineal</string>
+</resources>
