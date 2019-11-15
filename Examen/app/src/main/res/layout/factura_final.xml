@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pizza"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/item_nombre"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio Base"
+        android:textSize="14sp"
+        android:layout_below="@id/item_nombre"
+        android:id="@+id/item_precioBase"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extra"
+        android:textSize="14sp"
+        android:layout_below="@id/item_nombre"
+        android:id="@+id/item_precioExtra"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unidades"
+        android:textSize="14sp"
+        android:layout_below="@id/item_unidades"
+        android:id="@+id/item_unidades"/>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Envio"
+        android:textSize="14sp"
+        android:layout_below="@id/item_envio"
+        android:id="@+id/item_envio"/>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio Final"
+        android:textSize="14sp"
+        android:layout_below="@id/item_precioFinal"
+        android:id="@+id/item_precioFinal"/>
+
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:src="@drawable/pizza3"
+        android:layout_toEndOf="@id/item_nombre"
+        android:id="@+id/item_image"/>
+
+
+
+
+</RelativeLayout>
