@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<TableRow>
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre" />
+
+    <EditText
+        android:id="@+id/miNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</TableRow>
+
+
+
+<TableRow>
+
+    <TextView
+        android:id="@+id/apellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellido" />
+
+    <EditText
+        android:id="@+id/miApellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</TableRow>
+
+
+
+
+
+ <TableRow>
+
+     <TextView
+         android:id="@+id/edad"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Edad" />
+
+     <EditText
+         android:id="@+id/miEdad"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+
+    </TableRow>
+    <ImageView
+        android:id="@+id/imagenPersona"
+        android:layout_width="50dp"
+        android:layout_height="200dp"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="416dp" />
+</TableLayout>

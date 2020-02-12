@@ -9,16 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Base_Datos.Registro$Usuario"></activity>
+        <activity android:name=".Clases.CancionPantallaCompleta"></activity>
+        <activity android:name=".Base_Datos.Registro$Usuario" />
         <activity android:name=".Base_Datos.Registro" />
-        <activity android:name=".Clases.ClasePrincipal"/>
+        <activity android:name=".Clases.ClasePrincipal" />
         <activity android:name=".Clases.MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
     </application>

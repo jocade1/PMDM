@@ -12,9 +12,9 @@ import com.example.proyecto.Adaptador.Adaptador;
 public class ClasePrincipal extends AppCompatActivity {
 
     public static Cancion[] canciones = new Cancion[]{
-            new Cancion("DanceMonkey, ","Tones and I, ","2019, ",210,", Pop",R.drawable.dancemonkety),
-            new Cancion("Used to Love, ","Martin Garrix, ","2019, ",240,", Pop",R.drawable.usedtolove),
-            new Cancion("Keep you Mine, ","NOTH, ","2019, ",180,", Pop",R.drawable.keepyoumine),
+            new Cancion("DanceMonkey ","Tones and I ","2019, ",210," Pop",R.drawable.dancemonkety),
+            new Cancion("Used to Love ","Martin Garrix ","2019 ",240," Pop",R.drawable.usedtolove),
+            new Cancion("Keep you Mine ","NOTH ","2019 ",180," Pop",R.drawable.keepyoumine),
     };
 
 
@@ -26,5 +26,8 @@ public class ClasePrincipal extends AppCompatActivity {
         Adaptador adaptador = new Adaptador(this);
         ListView listView= (ListView) findViewById(R.id.ListViewCanciones);
         listView.setAdapter(adaptador);
+
+
+
     }
 }
