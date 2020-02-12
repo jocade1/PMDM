@@ -45,13 +45,8 @@ public class DataBaseHelperUsuario  extends SQLiteOpenHelper {
         String selection = DataBaseHelper.USUARIOS_EMAIL + " = ?";
         String[] selectionArgs = {email};
 
-        Cursor cursor = db.query(DataBaseHelper.TABLE_USUARIOS,
-                columns,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null);
+        Cursor cursor = db.query(DataBaseHelper.TABLE_USUARIOS,columns,selection,selectionArgs,
+                null,null,null);
         int cursorCount = cursor.getCount();
         cursor.close();
         db.close();
@@ -71,13 +66,8 @@ public class DataBaseHelperUsuario  extends SQLiteOpenHelper {
         String selection = DataBaseHelper.USUARIOS_EMAIL + " = ?"+ " AND "+ DataBaseHelper.USUARIOS_PASSWORD+ " = ?";
         String[] selectionArgs = {email, password};
 
-        Cursor cursor = db.query(DataBaseHelper.TABLE_USUARIOS,
-                columns,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null);
+        Cursor cursor = db.query(DataBaseHelper.TABLE_USUARIOS,columns,selection,selectionArgs,
+                null,null,null);
         int cursorCount = cursor.getCount();
         cursor.close();
         db.close();
@@ -88,14 +78,6 @@ public class DataBaseHelperUsuario  extends SQLiteOpenHelper {
         return false;
     }
 
-/*
-    private void createtables(SQLiteDatabase db) {
-        db.execSQL(DataBaseHelper.DATABASE_TABLE_USUARIOS);
-    }
-*/
 
-/*    private void deletetables(SQLiteDatabase db) {
-        db.execSQL("DROP TABLE EXISTS" + DataBaseHelper.DATABASE_TABLE_USUARIOS);
-    }*/
 }
 
