@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Clases.CancionPantallaCompleta"></activity>
+        <activity android:name=".Clases.Favoritos"></activity>
+        <activity android:name=".Clases.CancionPantallaCompleta" />
         <activity android:name=".Base_Datos.Registro$Usuario" />
         <activity android:name=".Base_Datos.Registro" />
         <activity android:name=".Clases.ClasePrincipal" />
