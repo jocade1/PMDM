@@ -22,8 +22,22 @@ public class DataBaseHelperUsuario  extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        deleteTables(db);
+        createTables(db);
 
     }
+
+    private void createTables(SQLiteDatabase db){
+        db.execSQL(DataBaseHelper.DATABASE_NAME);
+
+    }
+
+
+    private void deleteTables(SQLiteDatabase db){
+        db.execSQL("DROP TABLE IF EXISTS "+ DataBaseHelper.DATABASE_NAME);
+    }
+
+
 
     public void addUser(Usuario user){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -79,5 +93,9 @@ public class DataBaseHelperUsuario  extends SQLiteOpenHelper {
     }
 
 
+
+
+
 }
+
 

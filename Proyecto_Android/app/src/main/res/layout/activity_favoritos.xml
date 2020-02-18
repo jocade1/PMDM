@@ -10,10 +10,14 @@
     <ListView
         android:id="@+id/ListViewCancionesFavoritasUsuarios"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content">
 
+    <fragment android:name="com.example.proyecto.Fragmentos.FragmentoCantante"
+        android:id="@+id/framgento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
+    </ListView>
 
 
 

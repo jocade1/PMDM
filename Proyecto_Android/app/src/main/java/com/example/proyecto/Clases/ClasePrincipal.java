@@ -3,6 +3,8 @@ package com.example.proyecto.Clases;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.ListView;
 
 import com.example.proyecto.R;
@@ -29,5 +31,12 @@ public class ClasePrincipal extends AppCompatActivity {
 
 
 
+
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
 }

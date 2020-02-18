@@ -3,15 +3,18 @@ package com.example.proyecto.Clases;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyecto.R;
 
 import org.w3c.dom.Text;
 
 public class CancionPantallaCompleta extends AppCompatActivity {
+    TextView textView;
 
 
     @Override
@@ -39,6 +42,22 @@ public class CancionPantallaCompleta extends AppCompatActivity {
 
 
 
+
+
+
+
+    }
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        switch (menuItem.getItemId()) {
+            case R.id.menu_cancion_favorita:
+                textView.setText("Pulsado op 1");
+                System.out.println("Entras o no");
+                Toast.makeText(getApplicationContext(),"Has pulsado op 1", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
+
+        }
 
     }
 }
