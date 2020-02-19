@@ -42,7 +42,7 @@ public class DataBaseHelper {
 
 
     public static final String DATABASE_CREATE_USUARIO= " create table "+TABLE_USUARIOS +"("
-            +USUARIOS_ID+" text primary key autoincrement,"
+            +USUARIOS_ID+" text not null,"
             +USUARIOS_NOMBRE+ " text not null,"
             +USUARIOS_EMAIL+ " text not null,"
             +USUARIOS_PASSWORD+" text not null"+")";
@@ -55,7 +55,7 @@ public class DataBaseHelper {
             +CANCIONES_AUTOR+" text not null,"
             +CANCIONES_DURACION+" text not null,"
             +USUARIOS_ID+" text not null,"
-            +" FOREIGN KEY ( "+CANCIONES_ID+ " ) REFERENCES "+TABLE_USUARIOS+" ( "+CANCIONES_ID+" ))";
+            +" FOREIGN KEY ( "+USUARIOS_ID+ " ) REFERENCES "+TABLE_USUARIOS+" ( "+USUARIOS_ID+" ))";
 
 
 

@@ -2,6 +2,7 @@ package com.example.proyecto.Base_Datos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,8 @@ public class Registro extends AppCompatActivity /*implements View.OnClickListene
             @Override
             public void onClick(View v) {
                 saveData();
+                Intent intent = new Intent(Registro.this,MainActivity.class); //se llama desde le activity main al activity register
+                Registro.this.startActivity(intent);
             }
         });
     }
