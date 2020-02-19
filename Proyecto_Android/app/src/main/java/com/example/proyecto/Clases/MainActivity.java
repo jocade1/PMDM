@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.proyecto.Adaptador.Adaptador;
+import com.example.proyecto.Base_Datos.DataBaseHelper;
 import com.example.proyecto.R;
 import com.example.proyecto.Base_Datos.Registro;
 
@@ -19,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
      public TextView tv_registro;
      public Button iniciar;
 
+     public DataBaseHelper dataBaseHelperUsuario= null;
+
 
 
     @Override
@@ -26,6 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        dataBaseHelperUsuario = new DataBaseHelper(this);
+        dataBaseHelperUsuario.open();
+
+
+
+
+
+
+
+
+
      /*   ListView listView= (ListView) findViewById(R.id.ListViewCanciones);
         Adaptador adaptador = new Adaptador(this);
         listView.setAdapter(adaptador);*/
@@ -49,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        if(dataBaseHelperUsuario!=null){
+            String nombre = "Jose";
+            String edad = "24";
+            String user ="josealbertopelu" ;
+            String password = "1234";
+
+        }
+        dataBaseHelperUsuario.close();
 
 
 
