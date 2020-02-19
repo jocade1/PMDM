@@ -11,16 +11,16 @@ import com.example.proyecto.Clases.Usuario;
 
 public class DataBaseHelper {
     public  Context context=null;
-    private DataBaseHelperUsuario dataBaseHelper=null;
-    private SQLiteDatabase db=null;
+    private static DataBaseHelperUsuario dataBaseHelper=null;
+    public static SQLiteDatabase db=null;
     public static final int DATABASE_VERSION=3;
     public static final String DATABASE_NAME= "Dbproyecto";
 
     public static final String TABLE_USUARIOS="Usuarios";
     public static final String USUARIOS_ID="user_id";
     public static final String USUARIOS_NOMBRE="user_name";
-    public static final String USUARIOS_EMAIL="user_email";
     public static final String USUARIOS_PASSWORD="user_password";
+    public static final String USUARIOS_EMAIL="user_email";
 
 
 
@@ -42,20 +42,20 @@ public class DataBaseHelper {
 
 
     public static final String DATABASE_CREATE_USUARIO= " create table "+TABLE_USUARIOS +"("
-            +USUARIOS_ID+" text primary key,"
+            +USUARIOS_ID+" text primary key autoincrement,"
             +USUARIOS_NOMBRE+ " text not null,"
-            +USUARIOS_EMAIL+" text not null,"
-            +USUARIOS_PASSWORD+" text"+")";
+            +USUARIOS_EMAIL+ " text not null,"
+            +USUARIOS_PASSWORD+" text not null"+")";
 
 
 
-    public static final String DATABASE_CREATE_CANCIONES_FAVORITAS =" create table " + TABLE_CANCIONES_FAVORITAS +"("
+    public static final String DATABASE_CREATE_CANCIONES_FAVORITAS ="create table " +TABLE_CANCIONES_FAVORITAS +"("
             +CANCIONES_ID+" text primary key,"
             +CANCIONES_NOMBRE+" text not null,"
             +CANCIONES_AUTOR+" text not null,"
-            +CANCIONES_DURACION+" text not null"
-            +USUARIOS_ID+" text not null"
-            +" FOREIGN KEY ( "+CANCIONES_ID+ " ) REFERENCES "+TABLE_USUARIOS+" ( "+CANCIONES_ID+" )";
+            +CANCIONES_DURACION+" text not null,"
+            +USUARIOS_ID+" text not null,"
+            +" FOREIGN KEY ( "+CANCIONES_ID+ " ) REFERENCES "+TABLE_USUARIOS+" ( "+CANCIONES_ID+" ))";
 
 
 
@@ -66,16 +66,16 @@ public class DataBaseHelper {
 
     }
 
-    public void addUser(Usuario user) {
+    public long addUser(String nombre, String usuario, String password,String email) {
         //db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(DataBaseHelper.USUARIOS_NOMBRE,user.getNombre());
-        values.put(DataBaseHelper.USUARIOS_EMAIL,user.getEmail());
-        values.put(DataBaseHelper.USUARIOS_PASSWORD,user.getPassword());
-        values.put(DataBaseHelper.USUARIOS_ID,user.getPassword());
+        values.put(USUARIOS_NOMBRE,nombre);
+        values.put(USUARIOS_ID,usuario);
+        values.put(USUARIOS_PASSWORD,password);
+        values.put(USUARIOS_EMAIL,email);
 
-        db.insert(DataBaseHelper.DATABASE_NAME,null,values);
-        db.close();
+        return db.insert(TABLE_USUARIOS,null,values);
+       // db.close();
     }
 
 
@@ -98,6 +98,7 @@ public class DataBaseHelper {
 
         private void createTables(SQLiteDatabase db) {
             db.execSQL(DataBaseHelper.DATABASE_CREATE_USUARIO);
+            db.execSQL(DataBaseHelper.DATABASE_CREATE_CANCIONES_FAVORITAS);
 
         }
 
@@ -111,7 +112,6 @@ public class DataBaseHelper {
 
 
     public DataBaseHelper open(){
-
         dataBaseHelper = new DataBaseHelperUsuario(context);
         db = dataBaseHelper.getWritableDatabase();
         return this;
@@ -127,6 +127,7 @@ public class DataBaseHelper {
 
 
 
+/*
 
         public boolean checkEmail(String email) {
             String[] columns={
@@ -170,21 +171,13 @@ public class DataBaseHelper {
         }
 
 
+*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-    }
+}
 
 
 

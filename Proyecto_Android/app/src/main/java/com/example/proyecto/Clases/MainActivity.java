@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
         if(dataBaseHelperUsuario!=null){
             String nombre = "Jose";
-            String edad = "24";
             String user ="josealbertopelu" ;
             String password = "1234";
 
