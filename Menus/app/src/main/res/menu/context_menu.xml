@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/contextOp1" android:title="Contexto 1"></item>
+    <item android:id="@+id/contextOp2" android:title="Contexto 2"></item>
+
+
+</menu>
