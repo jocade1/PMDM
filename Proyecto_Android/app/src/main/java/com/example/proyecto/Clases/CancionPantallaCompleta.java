@@ -4,25 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyecto.Base_Datos.DataBaseHelper;
 import com.example.proyecto.R;
 
 import org.w3c.dom.Text;
 
 public class CancionPantallaCompleta extends AppCompatActivity {
     TextView textView;
+    DataBaseHelper dataBaseHelper = null;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cancion_pantalla_completa);
+
+
+
         Bundle bundle = getIntent().getExtras();
-        Cancion cancion = (Cancion) bundle.getSerializable("guardado");
+        final Cancion cancion = (Cancion) bundle.getSerializable("guardado");
 
         TextView nombre = (TextView)findViewById(R.id.nombre_cancion);
         nombre.setText(cancion.getTitulo());
@@ -40,6 +48,23 @@ public class CancionPantallaCompleta extends AppCompatActivity {
         ImageView imagen =(ImageView)findViewById(R.id.ImagenView_foto);
         imagen.setImageResource(cancion.getFoto());
 
+        final CheckBox checkBox =(CheckBox)findViewById(R.id.esFavorita);
+
+
+        dataBaseHelper = new DataBaseHelper(this);
+        dataBaseHelper.open();
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(checkBox.isChecked()){
+                    System.out.println("DEntro");;
+                    dataBaseHelper.insertCancion(cancion.getTitulo(),cancion.getFecha(),cancion.getAutor(), cancion.getGenero());
+                    dataBaseHelper.close();
+                }
+            }
+        });
+
+
 
 
 
@@ -47,7 +72,15 @@ public class CancionPantallaCompleta extends AppCompatActivity {
 
 
     }
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+
+
+
+
+
+
+
+
+    /*public boolean onOptionsItemSelected(MenuItem menuItem){
         switch (menuItem.getItemId()) {
             case R.id.menu_cancion_favorita:
                 textView.setText("Pulsado op 1");
@@ -57,7 +90,7 @@ public class CancionPantallaCompleta extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(menuItem);
 
-        }
+        }*/
 
     }
-}
+

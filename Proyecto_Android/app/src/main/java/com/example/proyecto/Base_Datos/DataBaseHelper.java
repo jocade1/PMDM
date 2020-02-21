@@ -79,7 +79,7 @@ public class DataBaseHelper {
     }
 
 
-    private class DataBaseHelperUsuario  extends SQLiteOpenHelper { //Clase interna
+    public static class DataBaseHelperUsuario  extends SQLiteOpenHelper { //Clase interna
         public DataBaseHelperUsuario(Context context) {
             super(context, DataBaseHelper.DATABASE_NAME, null, DataBaseHelper.DATABASE_VERSION);
         }
@@ -103,8 +103,8 @@ public class DataBaseHelper {
         }
 
 
-        private void deleteTables(SQLiteDatabase db) {
-            db.execSQL("DROP TABLE IF EXISTS " + DataBaseHelper.DATABASE_NAME);
+        public static void deleteTables(SQLiteDatabase db) {
+            db.execSQL("DROP TABLE IF EXISTS " + DataBaseHelper.TABLE_CANCIONES_FAVORITAS);
         }
 
 
@@ -117,9 +117,21 @@ public class DataBaseHelper {
         return this;
     }
 
+    public long insertCancion(String titulo,String duracion,String autor, String usuario) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(CANCIONES_NOMBRE, titulo);
+        contentValues.put(CANCIONES_DURACION, duracion);
+        contentValues.put(CANCIONES_AUTOR, autor);
+        contentValues.put(USUARIOS_ID,usuario);
+        return db.insert(TABLE_CANCIONES_FAVORITAS,null,contentValues);
+
+    }
 
 
-
+   /* public int delete(int row){
+        return(db.delete(DATABASE_CREATE_CANCIONES_FAVORITAS,CANCIONES_ID + "=?", new String[]{Integer.toString(row)}));
+    }
+*/
 
     public void close(){
         dataBaseHelper.close();

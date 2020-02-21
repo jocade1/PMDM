@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_cancion_favorita" android:title="Canciones Favoritas"></item>
+    <item android:id="@+id/menu_borrar_cancion" android:title="Borrar cancion"></item>
 
 </menu>

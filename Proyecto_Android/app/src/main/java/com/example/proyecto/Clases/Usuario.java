@@ -2,7 +2,7 @@ package com.example.proyecto.Clases;
 
 public class Usuario {
     private String nombre;
-    private String id;
+    public static String id;
     private String email;
     private String password;
 
